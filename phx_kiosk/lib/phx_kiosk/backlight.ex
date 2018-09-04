@@ -8,11 +8,11 @@ defmodule PhxKiosk.Backlight do
     GenServer.start_link(__MODULE__, options, name: __MODULE__)
   end
 
-  def brightness(value) when value >= 0 and value < 256 do
+  def set_brightness(value) when value >= 0 and value < 256 do
     GenServer.call(__MODULE__, {:brightness, value})
   end
 
-  def brightness(_) do
+  def set_brightness(_) do
    {:error, "Value has to be [0,255]"}
   end
 
