@@ -42,6 +42,7 @@ defmodule NervesKiosk.MixProject do
       {:ring_logger, "~> 0.4"},
       {:webengine_kiosk, "~> 0.1"},
       {:nerves_time, "~> 0.2"},
+      {:phx_kiosk, path: "../phx_kiosk"},
     ] ++ deps(@target)
   end
 
