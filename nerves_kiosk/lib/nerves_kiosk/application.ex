@@ -52,6 +52,11 @@ defmodule NervesKiosk.Application do
 
     # Workaround a known bug with HTML5 canvas an RPI GPU
     System.put_env("QTWEBENGINE_CHROMIUM_FLAGS", "--disable-gpu")
+
+    # Link to Console
+    System.put_env("QTWEBENGINE_REMOTE_DEBUGGING", "9222")
+    MuonTrap.Daemon.start_link("socat", ["tcp-listen:9223,fork",
+                                        "tcp:localhost:9222"])
   end
   #  }}} Add Webengine Stuff #
 end
