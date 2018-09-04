@@ -1,4 +1,6 @@
 defmodule PhxKioskWeb.HomeChannel do
+  require Logger
+
   use PhxKioskWeb, :channel
 
   def join("home:lobby", payload, socket) do
@@ -19,6 +21,11 @@ defmodule PhxKioskWeb.HomeChannel do
   # broadcast to everyone in the current topic (home:lobby).
   def handle_in("shout", payload, socket) do
     broadcast socket, "shout", payload
+    {:noreply, socket}
+  end
+
+  def handle_in("brightness", %{"value" => value}, socket) do
+    Logger.debug("☀️ -> #{inspect value}")
     {:noreply, socket}
   end
 
