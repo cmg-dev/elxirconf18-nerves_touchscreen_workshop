@@ -76,7 +76,7 @@ body, form, ul, table {
   }
 }
 
-/* Fold description {{{ */
+/* App Styles {{{ */
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -107,4 +107,9 @@ body, form, ul, table {
   background: #ee552f;
   cursor: pointer;
 }
-/* }}} Fold description */
+
+canvas#draw-canvas {
+  margin-top: 20px;
+  outline-style: solid;
+}
+/* }}} App Styles */
