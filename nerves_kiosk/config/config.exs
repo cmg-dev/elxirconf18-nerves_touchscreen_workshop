@@ -49,7 +49,7 @@ config :nerves_init_gadget,
 config :webengine_kiosk,
   uid: "kiosk",
   gid: "kiosk",
-  data_dir: "/root/kiosk"
+  data_dir: "/root/kiosk",
   homepage: "http://localhost"
 
 config :phx_kiosk, PhxKioskWeb.Endpoint,
