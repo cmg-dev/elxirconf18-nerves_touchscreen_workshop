@@ -2,7 +2,7 @@ defmodule PhxKioskWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", PhxKioskWeb.RoomChannel
+  channel "home:lobby", PhxKioskWeb.HomeChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
