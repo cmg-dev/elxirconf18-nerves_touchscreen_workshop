@@ -24,8 +24,11 @@ defmodule PhxKioskWeb.HomeChannel do
     {:noreply, socket}
   end
 
-  def handle_in("brightness", %{"value" => value}, socket) do
+  def handle_in("brightness", %{"value" => value} = payload, socket) do
     Logger.debug("☀️ -> #{inspect value}")
+
+    broadcast socket, "brightness", payload
+
     {:noreply, socket}
   end
 
